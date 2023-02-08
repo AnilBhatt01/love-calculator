@@ -16,12 +16,15 @@ function calculateLove() {
   let percent = Math.ceil(Math.random() * 100);
   if (yourName === "" || yourCrush === "") {
     result.textContent = "Enter name";
-  } else if (yourNameUp === "ANIL" && yourCrushUp === "SAMHITA") {
+  } else if (
+    (yourNameUp === "ANIL" || yourNameUp === "SAMHITA") &&
+    (yourCrushUp === "SAMHITA" || yourCrushUp === "ANIL")
+  ) {
     result.textContent =
       "You both are made for each other, your love can't be calculated in any calculator";
-  } else if (yourNameUp !== "ANIL" && yourCrushUp === "SAMHITA") {
+  } else if (yourNameUp === "SAMHITA" && yourCrushUp !== "ANIL") {
     result.textContent =
-      "This person will surely make you cry. Look for anyone else";
+      "This person will surely make you cry. Look for someone whose name starts with 'A' and ends with 'L'";
   } else {
     result.textContent = `${yourNameUp} and ${yourCrushUp} have ${percent}% love`;
   }
